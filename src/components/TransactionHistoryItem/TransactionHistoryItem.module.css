@@ -1,0 +1,11 @@
+.item {
+    border: 2px solid grey;
+    padding: 5px;
+    text-align: center;
+  }
+  .list:nth-child(odd) {
+    background-color: #e0e0e0; 
+  }
+  .type{
+  text-transform: capitalize;
+  }
