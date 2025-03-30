@@ -1,0 +1,14 @@
+
+
+.btn {
+    background-color: cornflowerblue;
+    box-shadow: 0 5px 10px 0 rgba(11, 99, 246, 1);
+    transition: 0.5s;
+    margin-left: 10px;
+  }
+  
+  .btn:hover {
+    transform: translate(0,-3px);
+    box-shadow: 0 10px 20px 0 rgba(11, 99, 246, 1);
+  }
+  

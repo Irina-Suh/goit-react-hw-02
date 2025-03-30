@@ -3,42 +3,72 @@ import { useState } from 'react';
 import s from './Counter.module.css';
 
 export const Counter = () => {
-  //1. Хуки мають викликатись лише в функціональному компоненті
-  //2. Хуки не можна викликати по умові
-  //3. Хуки не можна викликати в циклах
-  //4. Не можна хуки викликати за межами компонента
+
 
   const [counter, setCounter] = useState(0);
-//   const [step, setStep] = useState(10);
-
-  const handlePlusClick = () => {
+  const [click, setClick] = useState({
+      good: 0,
+      neutral: 0,
+      bad: 0
+       
+  });
+  const updateGood = () => {
+    setClick({
+      ...click,
+       good:  click.good + 1
+    });
     setCounter(counter + 1);
-    // console.log(counter);
   };
-  const handleMinusClick = () => {
-    setCounter(counter - 1);
+
+  const updateNeutral = () => {
+    setClick({
+      ...click,
+      neutral:  click.neutral + 1
+    });
+    setCounter(counter + 1);
   };
+
+  const updateBad = () => {
+    setClick({
+      ...click,
+       bad:  click.bad + 1
+    });
+    setCounter(counter + 1);
+  };
+
   const handleResetClick = () => {
     setCounter(0);
-    // setStep(1);
+    setClick({
+      good: 0,
+      neutral: 0,
+      bad: 0
+    });
   };
-  console.log('render');
 
   return (
     <div className={s.flexContainer}>
       <div className={s.wrapper}>
         <h1>{counter}</h1>
-        {/* <input value={step} type='number' onChange={e => setStep(+e.target.value)} /> */}
         <div className={s.flex}>
-          <button className='btn' onClick={handleMinusClick}>
-            minus
+          <button className='btn' onClick={updateGood}>
+            Good
+          </button>
+          <button onClick={updateNeutral} className='btn'>
+          Neutral
+          </button>
+          <button onClick={updateBad} className='btn'>
+          Bad
           </button>
           <button onClick={handleResetClick} className='btn'>
-            reset
+            Reset
           </button>
-          <button onClick={handlePlusClick} className='btn'>
-            plus
-          </button>
+          <ul>
+          <li>Good: {click.good}</li>
+          <li>Neutral: {click.neutral}</li>
+          <li>Bad: {click.bad}</li>
+          <li>Total: {counter}</li>
+          <li>Positive: {click.good / counter * 100} %</li>
+          </ul>
         </div>
       </div>
     </div>
