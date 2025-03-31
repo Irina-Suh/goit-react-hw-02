@@ -32,7 +32,7 @@ const App = () => {
               neutral: 0,
               bad: 0
              });
-             localStorage.removeItem('feedback');
+           localStorage.removeItem('feedback');
           };
 
       useEffect(() => {
@@ -43,6 +43,12 @@ const App = () => {
               good: parsed.good,
               neutral: parsed.neutral,
               bad: parsed.bad})
+        } else {
+          setClick({
+              good: 0,
+              neutral: 0,
+              bad: 0
+          });
         }
     }, []);
 
