@@ -32,7 +32,7 @@ const App = () => {
               neutral: 0,
               bad: 0
              });
-          
+             localStorage.removeItem('feedback');
           };
 
       useEffect(() => {
