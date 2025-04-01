@@ -30,7 +30,7 @@ const App = () => {
               neutral: 0,
               bad: 0
              });
-           //  localStorage.removeItem('feedback'); //без нього при оновленні сторінки залишаються старі дані, хоча сама кнопка ресет працює
+             localStorage.removeItem('feedback'); //без нього при оновленні сторінки залишаються старі дані, хоча сама кнопка ресет працює
           };
 
       useEffect(() => {
@@ -39,14 +39,9 @@ const App = () => {
         const parsed = JSON.parse(saved);
 
         if (saved !== null) {
-         return     setClick({
-                good: parsed.good,
-                neutral: parsed.neutral,
-                bad: parsed.bad})
+         return     setClick(parsed)
            } 
-    
-       return   0;
-        
+           localStorage.clear();
     }, []);
 
 
