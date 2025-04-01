@@ -42,7 +42,7 @@ const App = () => {
          return     setClick(parsed)
            } 
         
-    });
+    },[]);
 
 
         useEffect(() => {
