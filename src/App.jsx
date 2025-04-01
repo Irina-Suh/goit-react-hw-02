@@ -30,7 +30,7 @@ const App = () => {
               neutral: 0,
               bad: 0
              });
-        
+             localStorage.removeItem('feedback'); //без нього при оновленні сторінки залишаються старі дані, хоча сама кнопка ресет працює
           };
 
       useEffect(() => {
