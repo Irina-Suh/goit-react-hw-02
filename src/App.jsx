@@ -41,7 +41,7 @@ const App = () => {
         if (saved !== null) {
          return     setClick(parsed)
            } else return 0;
-         //  localStorage.removeItem('feedback');
+        
     });
 
 
