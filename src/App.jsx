@@ -40,8 +40,8 @@ const App = () => {
 
         if (saved !== null) {
          return     setClick(parsed)
-           } 
-           localStorage.removeItem('feedback');
+           } else return 0;
+         //  localStorage.removeItem('feedback');
     });
 
 
