@@ -34,7 +34,7 @@ const App = () => {
           };
 
       useEffect(() => {
-    
+      
         const saved = window.localStorage.getItem('feedback');
         if (saved) {
           const parsed = JSON.parse(saved);
@@ -44,6 +44,13 @@ const App = () => {
               bad: parsed.bad})
          } 
      
+        else {
+          setClick({
+              good: 0,
+              neutral: 0,
+              bad: 0
+          });
+        }
     }, []);
 
 
@@ -55,7 +62,7 @@ const App = () => {
               bad: click.bad,
               totalFeedback: totalFeedback,
               positiveFeedback: positiveFeedback
-  
+              
           };
           localStorage.setItem('feedback', JSON.stringify(local));
       }, [click]);
@@ -69,7 +76,7 @@ const App = () => {
          handleResetClick ={handleResetClick}/>
 
 { 
-(totalFeedback > 0) ? <Feedback click={click} totalFeedback={totalFeedback}  positiveFeedback ={positiveFeedback} />//(<Notification message = {totalFeedback} />) 
+(totalFeedback > 0) ? <Feedback click={click} totalFeedback={totalFeedback}  positiveFeedback ={positiveFeedback} /> 
                       : (<Notification message="No feedback yet" />)
 } 
 
