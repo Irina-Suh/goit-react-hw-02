@@ -36,21 +36,21 @@ const App = () => {
       useEffect(() => {
       
         const saved = window.localStorage.getItem('feedback');
-        if (saved) {
-          const parsed = JSON.parse(saved);
-          setClick({
-              good: parsed.good,
-              neutral: parsed.neutral,
-              bad: parsed.bad})
-         } 
-     
-        else {
-          setClick({
+        const parsed = JSON.parse(saved);
+
+        if (saved !== null) {
+         return     setClick({
+                good: parsed.good,
+                neutral: parsed.neutral,
+                bad: parsed.bad})
+           } 
+    
+       return    setClick({
               good: 0,
               neutral: 0,
               bad: 0
           });
-        }
+        
     }, []);
 
 
