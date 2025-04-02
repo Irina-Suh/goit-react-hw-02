@@ -46,16 +46,8 @@ const App = () => {
 
 
         useEffect(() => {
-          const local = {
-              
-              good: click.good,
-              neutral: click.neutral,
-              bad: click.bad,
-              totalFeedback: totalFeedback,
-              positiveFeedback: positiveFeedback
-              
-          };
-          localStorage.setItem('feedback', JSON.stringify(local));
+    
+          localStorage.setItem('feedback', JSON.stringify(click));
       }, [click]);
 
         
